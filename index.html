@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+  <div class="container" style="background-color: rgb(164, 189, 245);">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row jumbotron text-centre">
+      <p>Welcome volunteers of the Belly Button Biodiversity study! Please use the drop down menu below to select your subject ID number. The graphs will adjust to then show you the: top 10 bacteria cultures found, how oftern you wash your belly button, and the bacteria cultures per sample. Enjoy!  </p>
+    </div>
+    <div class="row" style="background-color: rgb(164, 189, 245);">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> this is what creates the dropdown menu, and the select tag below makes it a dynamic drop down-->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <!-- this creates the info pannel for the demographic info-->
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p>This bar graph shows the top 10 bacteria found in your naval. Along the x-axis you will see the number of samples per bacteria type or ID. To see the bacteria name hover your cursor over the bars.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p>This simple gauge chart shows how often you wash your belly button per week.</p>
+      </div>
+    </div>
+    <div class="row" style="background-color: rgb(164, 189, 245);">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p>This bubble chart shows all of the bacteria cultures found, not just your top 10. The size of the bubble is dependant on how many samples of that bacteria were found. So a larger bubble equals more of that specific bacterial. To see names of the bacteria and not just the ID hover your cursor over the bubble.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
